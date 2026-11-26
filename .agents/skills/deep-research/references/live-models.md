@@ -1,6 +1,6 @@
 # Live Antigravity Models & Capability Routing
 
-> Auto-synced: `2026-11-26T05:09:54+02:00` | Source: `agy models` + `models.md` (`docs_fetched=True`)
+> Auto-synced: `2026-11-26T05:17:05+02:00` | Source: `agy models` + `models.md` (`docs_fetched=True`)
 > Refresh command: `python "~/.skills-manager/sync_models.py"`
 
 ## 1. Two-Layer Addressing Rule

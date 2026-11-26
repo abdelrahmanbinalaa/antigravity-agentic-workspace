@@ -20,7 +20,8 @@ MARKER = AGENTS_DIR / ".bootstrap_done"
 
 def main() -> int:
     try:
-        _stdin_raw = sys.stdin.read()
+        if not sys.stdin.isatty():
+            _stdin_raw = sys.stdin.read()
     except Exception:
         _stdin_raw = ""
 
