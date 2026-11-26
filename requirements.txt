@@ -1,0 +1,10 @@
+# Core quantitative & operational research stack (used by deep-research/scripts/dr_engine.py)
+numpy>=1.26.0
+scipy>=1.12.0
+pandas>=2.1.0
+networkx>=3.2.0
+pydantic>=2.6.0
+
+# Optional web/scraping agentic CLI tools (for Linux Remote containers / fresh machines)
+scrapling>=0.5.1
+agent-reach

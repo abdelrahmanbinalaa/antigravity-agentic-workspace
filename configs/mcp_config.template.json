@@ -1,0 +1,45 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@latest"]
+    },
+    "kaggle": {
+      "serverUrl": "https://www.kaggle.com/mcp",
+      "headers": {
+        "Authorization": "Bearer YOUR_KAGGLE_TOKEN"
+      }
+    },
+    "huggingface": {
+      "serverUrl": "https://huggingface.co/mcp?login"
+    },
+    "searxncrawl": {
+      "command": "npx",
+      "args": ["-y", "searxncrawl-mcp@latest"],
+      "env": {
+        "SEARXNG_URL": "http://localhost:8080"
+      }
+    },
+    "brightdata": {
+      "command": "npx",
+      "args": ["-y", "@brightdata/mcp@latest"],
+      "env": {
+        "API_TOKEN": "YOUR_BRIGHTDATA_FREE_TIER_TOKEN"
+      }
+    },
+    "firecrawl": {
+      "command": "npx",
+      "args": ["-y", "firecrawl-mcp@latest"],
+      "env": {
+        "FIRECRAWL_API_KEY": "YOUR_FIRECRAWL_API_KEY"
+      }
+    },
+    "apify": {
+      "command": "npx",
+      "args": ["-y", "@apify/actors-mcp-server@latest"],
+      "env": {
+        "APIFY_TOKEN": "YOUR_APIFY_TOKEN"
+      }
+    }
+  }
+}
