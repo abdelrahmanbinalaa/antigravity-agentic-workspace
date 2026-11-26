@@ -12,21 +12,14 @@ Portable multi-agent skills, deterministic research & swarm engines, quantitativ
 
 ## Quick Start (Antigravity Remote / Linux Container)
 
-Attach this repository under **Remote > GitHub Repositories** in Antigravity, then bootstrap Python solvers and CLI helpers if needed:
-
-```bash
-bash scripts/bootstrap_remote_tools.sh
-```
+Attach this repository under **Remote > GitHub Repositories** in Antigravity. Everything bootstraps automatically:
+- `.agents/hooks.json` runs `auto_session_init.py` on `SessionStart` to ensure output directories and Python packages are ready.
+- `dr_engine.py simulate` also auto-installs `numpy`/`scipy` on demand if missing.
+- Optional manual fallback: `bash scripts/bootstrap_remote_tools.sh`.
 
 ## Quick Start (Local Machine)
 
-```powershell
-# Windows setup
-.\scripts\bootstrap_remote_tools.ps1
-
-# Refresh .agents/skills/ from your local ~/.skills-manager/store
-python scripts/sync_from_local_store.py
-```
+On Windows, `auto_sync_all.py` (scheduled monthly via Windows Task Scheduler `AntigravityAutoSync` and ready in Antigravity Automations) automatically updates live Antigravity model specs, syncs all 10 local agents via `skillsctl`, mirrors all skills into `.agents/skills/`, runs a secret-hygiene check, and commits/pushes updates to GitHub `main`.
 
 ## MCP Configuration
 

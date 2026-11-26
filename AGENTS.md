@@ -22,7 +22,7 @@ This workspace bundles a complete, cross-agent suite of **skills**, **determinis
 
 4. **Web Extraction & Agentic Tools**
    - Use `agent-reach`, `scrapling-official`, `firecrawl` (if API key configured), and native search/browser tools.
-   - **In a fresh Remote / Linux container:** run `bash scripts/bootstrap_remote_tools.sh` before executing `dr_engine.py simulate` or `scrapling`/`agent-reach` if packages are not preinstalled.
+   - **Zero-Touch Auto-Bootstrap:** `.agents/hooks.json` runs `auto_session_init.py` automatically on `SessionStart`, and `dr_engine.py simulate` self-installs `numpy`/`scipy` on demand if missing in a fresh container (manual fallback: `bash scripts/bootstrap_remote_tools.sh`).
 
 ## Non-Negotiable Quality Charter
 

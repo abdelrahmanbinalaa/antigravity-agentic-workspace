@@ -14,5 +14,6 @@ research_runs/
 swarm_runs/
 competitor-profiles/
 .firecrawl/
+.agents/.bootstrap_done
 .DS_Store
 Thumbs.db

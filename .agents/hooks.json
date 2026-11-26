@@ -1,0 +1,11 @@
+{
+  "auto-agentic-bootstrap": {
+    "SessionStart": [
+      {
+        "type": "command",
+        "command": "python3 scripts/auto_session_init.py || python scripts/auto_session_init.py",
+        "timeout": 120
+      }
+    ]
+  }
+}

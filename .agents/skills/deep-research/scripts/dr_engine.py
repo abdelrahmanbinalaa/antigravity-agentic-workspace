@@ -828,6 +828,20 @@ def _run_lp_optimize(spec: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def _ensure_or_deps() -> None:
+    """Auto-install numpy/scipy on demand in fresh Remote/sandboxed containers."""
+    import importlib.util
+    import subprocess
+
+    missing = [pkg for pkg in ("numpy", "scipy") if importlib.util.find_spec(pkg) is None]
+    if missing:
+        subprocess.check_call(
+            [sys.executable, "-m", "pip", "install", "-q", *missing],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        )
+
+
 def cmd_simulate(args: argparse.Namespace) -> int:
     slug_dir = Path(args.dir).expanduser().resolve()
     if not (slug_dir / "brief.json").exists():
@@ -839,6 +853,7 @@ def cmd_simulate(args: argparse.Namespace) -> int:
     spec = read_json(spec_path)
 
     try:
+        _ensure_or_deps()
         if args.type == "monte-carlo":
             result = _run_monte_carlo(spec)
         elif args.type == "pareto-mcda":
